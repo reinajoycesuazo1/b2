@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "site-title site-title nav-bar nav-bar"
+        "post-title post-title post-title post-title"
+        "post-meta main-content main-content sidebar"
+        "post-meta main-content main-content ads"
+        "post-meta main-content-image main-content-image other-stuffs"
+        "footer footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.site-title {
+    grid-area: site-title;
+    background-color: #ffd700;
+    padding: 15px;
+}
+
+.nav-bar {
+    grid-area: nav-bar;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background-color: #ffcccc;
+}
+
+.nav-bar > div {
+    flex: 1;
+    padding: 15px;
+    background-color: #ff99aa;
+}
+
+.post-title {
+    grid-area: post-title;
+    background-color: #add8e6;
+    padding: 15px;
+}
+
+.post-meta {
+    grid-area: post-meta;
+    background-color: #90ee90;
+    padding: 10px;
+}
+
+.main-content {
+    grid-area: main-content;
+    background-color: #d3d3d3;
+    gap: 10px;
+    padding: 0px;
+}
+
+.main-content-image {
+    grid-area: main-content-image;
+    background-color: #ffff00;
+    padding: 50px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ffa500;
+    padding: 50px;
+}
+
+.ads {
+    grid-area: ads;
+    background-color: #006400;
+    color: white;
+    padding: 50px;
+}
+
+.other-stuffs {
+    grid-area: other-stuffs;
+    background-color: #ee82ee;
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #a0522d;
+    padding: 10px;
+    color: white;
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "site-title"
+            "nav-bar"
+            "post-title"
+            "post-meta"
+            "main-content"
+            "main-content-image"
+            "sidebar"
+            "ads"
+            "other-stuffs"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, auto);
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+}
